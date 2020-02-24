@@ -1,0 +1,41 @@
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+    \newgeometry{left=0.2cm,right=0.2cm,bottom=0.2cm,top=0.2cm}
+    \begin{landscape}
+        \begin{table}[]
+            \centering
+            \begin{tabularx}{1\linewidth}{Xcp{80pt}p{70pt}p{70pt}cccp{110pt}ccc}
+                \toprule
+                \textbf{Approach} & \textbf{TYPE} & \textbf{ANOM} & \textbf{TRAIN} & \textbf{PROC} & \textbf{DIM} & \textbf{DRIFT} & \textbf{NOISE} & \textbf{EV1} & \textbf{EV2} & \textbf{EV3} & \textbf{EV4} \\
+                \midrule
+                \citet{hutchison_anomalous_2004} & Prob. & Point & Unsupervised \par Incremental & Online & n & Y & Y & Accuracy, Confusion, ROC, Time, Memory & Real & N & N \\
+                \citet{bifet_new_2009} & Prob. & Point & Unsupervised \par Incremental & Online & n & Y & N & Accuracy, Time, Memory & Both & Y & N \\
+                \citet{schneider_expected_2016} & Prob. & Point & Unsupervised \par Incremental & Batch/Online & n & Y & N & Accuracy, AUC, Time, Memory, Stat. Tests & Both & Y & N \\
+                \citet{talagala_anomaly_2019} & Prob. & Sequence & Unsupervised & Online & 1 & Y & Y & Accuracy, Confusion, OP, PPV & Both & N & Y \\
+                \midrule
+                \citet{cao_density-based_2006} & Dist. & Point & Unsupervised \par Incremental & Online & n & Y & Y & Cluster Purity, Time, Memory & Both & Y & Y \\
+                \citet{kontaki_continuous_2011} & Dist. & Point & Unsupervised \par Incremental & Online & n & Y & N & Time, Memory, Event Count & Both & Y & Y \\
+                \citet{miller_twitter_2014} & Dist. & Point & Unsupervised \par Incremental & Online & n & Y & N & Accuracy, ROC, Precision, Recall & Real & N & Y \\
+                \citet{yoon_nets:_2019} & Dist. & Point & Unsupervised \par Incremental & Online & n & Y & N & Time, Memory, Concentration Ratio & Both & Y & Y \\
+                \midrule
+                \citet{hayes_contextual_2015} & Recon. & Contextual & Unsupervised & Online & 1 & N & N & Time, Accuracy & Real & N & N \\
+                \citet{shipmon_time_2017} & Recon. & Point/Collective \par Only Periodic & Supervised & Batch/Online & n & N & Y & MSE, Confusion & Both & N & N \\
+                \citet{ahmad_unsupervised_2017} & Recon. & Collective & Unsupervised \par Incremental & Online & n & Y & Y & NAB Score, Time, Capabilities & Both & Y & Y \\
+                \citet{kanarachos_detecting_2017} & Recon. & Contextual \par Temporal & Unsupervised \par Incremental & Batch/Online & 1 & N & Y & ROC, AUC, Significance & Real & N & N \\
+                \midrule
+                \citet{liu_isolation_2008} & Domain & Point & Unsupervised & Online & n & N & Y & AUC, Time & Both & Y & Y \\
+                \citet{dos_santos_teixeira_data_2010} & Domain & Collective & Unsupervised \par Incremental & Online & n & Y & N & Confusion, Precision, Recall, F1 & Both & Y & Y \\
+                \midrule
+                \citet{muter_entropy-based_2011} & Info. & Point & Unsupervised & Online & 1 & N & N & Analysis of Entropy & Real & N & N\\
+                \citet{wang_statistical_2011} & Info. & Contextual \par Temporal & Unsupervised & Online & 1 & Y & N & Confusion, Recall & Both & N & Y \\
+                \citet{rettig_online_2015} & Info. & Contextual \par Temporal & Unsupervised & Batch/Online & n & Y & N & Domain Knowledge, Time & Real & N & N \\
+                \bottomrule
+            \end{tabularx}
+            \caption{Overview of the references surveyed in this work. The \textbf{TYPE} of each reference describes which category the presented approach belongs to. \textbf{ANOM} describes what types of anomalies are detected by the approach. \textbf{TRAIN} describes, whether the approach is trained in a supervised or unsupervised manner. \textbf{PROC} describes how the approach processes new observations (online also includes windowed quasi-online approaches). \textbf{DIM} describes, whether an approach works on univariate (1) or multivariate (n) data. \textbf{DRIFT} is marked as fulfilled (Y), if the approach explicitly accounts for concept drift. \textbf{NOISE} is marked as fulfilled (Y), if the approach considers noise and has also been evaluated on noisy data. \textbf{EV1} summarizes, what measures were used to evaluate the approach (both complexity and accuracy-wise). \textbf{EV2} signifies, whether only real data, or both artificial and real data was used in the evaluation. \textbf{EV3} is marked as fulfilled, if all the data used for the evaluation is available for replication. \textbf{EV4} is marked as fulfilled, if the algorithms used by the approach are explicitly stated and not only described textually.}
+            \label{tab:approach_overview}
+        \end{table}
+    \end{landscape}
+    \restoregeometry
+    \clearpage% Flush page
+}
